@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Ortam ve gizli bilgiler
+.env
+*.key
+
+# Model ağırlıkları ve HF önbelleği (yeniden indirilir)
+models/
+*.bin
+*.safetensors
+.cache/
+
+# Veri: büyük ham dosyalar ve üretilmiş indeksler Git'e girmez
+# (küçük örnek/şema dosyaları hariç tutmak için tek tek ekleyin)
+data/raw/*.pdf
+data/processed/*.faiss
+data/processed/*.npy
+data/processed/*.pkl
+*.faiss
+*.npy
+
+# Deney çıktıları: özetler girer, ara dump'lar girmez
+results/dump/
+results/checkpoints/
+*.ckpt
+
+# Notebook
+.ipynb_checkpoints/
+
+# İşletim sistemi / editör
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,64 @@
+# Deney konfigürasyonu — tek doğruluk kaynağı.
+# Bir değeri değiştirmek için kodu değil bu dosyayı düzenleyin.
+# Her deney çalışması, bu dosyanın kopyasını sonuçlarla birlikte kaydeder.
+
+deney:
+  ad: ana-karsilastirma
+  tohumlar: [42, 43, 44, 45, 46]   # en az 5 bağımsız tohum
+
+veri:
+  korpus: data/raw/yonetmelik.txt        # madde başlıklarına göre bölünür
+  sorular: data/processed/sorular.jsonl  # şema: data/README.md
+  # Soru tipi dağılımı hedefi (İP-2'de kesinleşir):
+  # olgusal / paraphrase / bicimbilimsel-karmasik / cok-maddeli
+
+parcalama:            # chunking — ana deneyde SABİT, A5 ablasyonunda değişir
+  boyut_karakter: 800
+  ortusme_karakter: 100
+  strateji: cumle-siniri
+
+modeller:
+  - ad: minilm
+    hf: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+    tur: dense
+  - ad: e5-base
+    hf: intfloat/multilingual-e5-base
+    tur: dense
+    sorgu_oneki: "query: "
+    belge_oneki: "passage: "
+  - ad: bge-m3
+    hf: BAAI/bge-m3
+    tur: dense
+  - ad: qwen3-0.6b
+    hf: Qwen/Qwen3-Embedding-0.6B
+    tur: dense
+    sorgu_yonergesi: "Verilen Türkçe soru için ilgili yönetmelik maddesini bul."
+  - ad: tr-model
+    hf: DOLDURULACAK  # TR-MTEB Türkçe modelinin tam HF adı İP-1'de doğrulanır
+    tur: dense
+  - ad: bm25
+    hf: null
+    tur: sozcuksel
+
+erisim:
+  top_k: [1, 3, 5, 10]   # Recall@k / Hit@k bu değerlerde raporlanır
+  ana_top_k: 5           # RAG üretimine giden belge sayısı (A4'te değişir)
+
+uretim:
+  llm: Qwen/Qwen2.5-7B-Instruct   # TÜM sistemlerde sabit; sürümü rapora yazın
+  yukleme: 4bit                    # Colab T4 (16 GB) için
+  sicaklik: 0.0
+  maks_yeni_token: 512
+  prompt_sablonu: prompts/rag_tr.txt
+
+router:                 # RQ5 — İP-5'te etkinleştirilir
+  etkin: false
+  ozellikler: [sorgu_uzunlugu, soru_tipi, bm25_dense_skor_farki, token_sayisi]
+  model: logreg         # sklearn: logreg | rf
+  egitim_bolmesi: train # seçim yalnızca train/val üzerinden öğrenilir
+
+degerlendirme:
+  retrieval_metrikler: [recall@5, recall@10, ndcg@10, mrr@10, hit@5]
+  rag_metrikler: [faithfulness, answer_correctness]
+  guven_araligi: eslestirilmis-bootstrap
+  bootstrap_tekrar: 1000

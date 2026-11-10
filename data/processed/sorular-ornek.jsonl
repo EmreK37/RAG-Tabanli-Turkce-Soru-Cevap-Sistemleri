@@ -1,0 +1,2 @@
+﻿{"soru_id": "S001", "soru": "Öğrencinin mezuniyet koşulları nelerdir?", "tip": "olgusal", "kanit_chunk_id": "MADDE-38", "referans_yanit": "İP-2'de doğrulanacak", "varyant_grup": "G001", "bolme": "test"}
+{"soru_id": "S002", "soru": "Mezun olabilmek için hangi şartları sağlamalıyım?", "tip": "paraphrase", "kanit_chunk_id": "MADDE-38", "referans_yanit": "İP-2'de doğrulanacak", "varyant_grup": "G001", "bolme": "test"}
