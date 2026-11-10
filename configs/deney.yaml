@@ -34,7 +34,7 @@ modeller:
     tur: dense
     sorgu_yonergesi: "Verilen Türkçe soru için ilgili yönetmelik maddesini bul."
   - ad: tr-model
-    hf: DOLDURULACAK  # TR-MTEB Türkçe modelinin tam HF adı İP-1'de doğrulanır
+    hf: trmteb/turkish-embedding-model
     tur: dense
   - ad: bm25
     hf: null

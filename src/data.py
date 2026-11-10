@@ -76,7 +76,7 @@ def yonetmelik_parcala(
 
 
 def korpus_yukle(yol: str | Path) -> str:
-    return Path(yol).read_text(encoding="utf-8")
+    return Path(yol).read_text(encoding="utf-8-sig")
 
 
 def chunklari_kaydet(chunklar: list[Chunk], yol: str | Path) -> None:
@@ -86,7 +86,7 @@ def chunklari_kaydet(chunklar: list[Chunk], yol: str | Path) -> None:
 
 
 def jsonl_oku(yol: str | Path) -> list[dict]:
-    with open(yol, encoding="utf-8") as f:
+    with open(yol, encoding="utf-8-sig") as f:
         return [json.loads(satir) for satir in f if satir.strip()]
 
 

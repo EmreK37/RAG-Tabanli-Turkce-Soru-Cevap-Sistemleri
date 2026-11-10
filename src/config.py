@@ -16,7 +16,7 @@ DEFAULT_CONFIG = REPO_ROOT / "configs" / "deney.yaml"
 def load_config(path: str | Path | None = None) -> dict:
     """YAML konfigürasyonunu sözlük olarak döndürür."""
     cfg_path = Path(path) if path else DEFAULT_CONFIG
-    with open(cfg_path, encoding="utf-8") as f:
+    with open(cfg_path, encoding="utf-8-sig") as f:
         return yaml.safe_load(f)
 
 

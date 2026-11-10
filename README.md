@@ -22,7 +22,7 @@ Bu repo, Türkçe RAG (Retrieval-Augmented Generation) sistemlerinde farklı emb
 | intfloat/multilingual-e5-base | Çok dilli dense retrieval |
 | BAAI/bge-m3 | Güçlü çok dilli erişim (dense + sparse + multi-vector) |
 | Qwen/Qwen3-Embedding-0.6B | Yeni nesil embedding referansı |
-| TR-MTEB Türkçe modeli | Türkçe odaklı karşılaştırma (tam HF adı kurulumda doğrulanır) |
+| TR-MTEB Türkçe modeli (`trmteb/turkish-embedding-model`) | Türkçe odaklı karşılaştırma |
 | BM25 | Sözcüksel (embedding'siz) baz çizgisi |
 
 Her model için ayrı FAISS indeksi kurulur; farklı modellerin vektörleri aynı indekste karıştırılmaz. Tüm sistemlerde aynı LLM, prompt, chunk yöntemi, Top-k ve üretim ayarları kullanılır.
@@ -30,7 +30,8 @@ Her model için ayrı FAISS indeksi kurulur; farklı modellerin vektörleri ayn�
 ## Hızlı başlangıç (Google Colab — önerilen)
 
 1. Aşağıdaki notebook'u Colab'da açın: **notebooks/00_kurulum_ve_kontrol.ipynb**
-   - Colab bağlantısı: https://colab.research.google.com/github/EmreK37/RAG-Tabanl-T-rk-e-Soru-Cevap-Sistemleri/blob/main/notebooks/00_kurulum_ve_kontrol.ipynb
+   - Colab bağlantısı (`RAG-dev`): https://colab.research.google.com/github/EmreK37/RAG-Tabanli-Turkce-Soru-Cevap-Sistemleri/blob/RAG-dev/notebooks/00_kurulum_ve_kontrol.ipynb
+   - Colab bağlantısı (`main`): https://colab.research.google.com/github/EmreK37/RAG-Tabanli-Turkce-Soru-Cevap-Sistemleri/blob/main/notebooks/00_kurulum_ve_kontrol.ipynb
 2. Çalışma zamanı türünü GPU (T4) seçin: Çalışma zamanı → Çalışma zamanı türünü değiştir → T4 GPU.
 3. Hücreleri sırayla çalıştırın. Notebook Drive'ı bağlar, repoyu klonlar, bağımlılıkları kurar ve ortamı doğrular.
 4. Deneyler sırayla `01`–`05` numaralı notebook'larla yürür; sonuçlar Drive'a ve `results/` klasörüne yazılır.
