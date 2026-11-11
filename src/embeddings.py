@@ -23,7 +23,11 @@ class DenseEmbedder:
         self.sorgu_oneki = sorgu_oneki
         self.belge_oneki = belge_oneki
         self.sorgu_yonergesi = sorgu_yonergesi
-        self.boyut = self.model.get_sentence_embedding_dimension()
+        self.boyut = (
+            self.model.get_embedding_dimension()
+            if hasattr(self.model, "get_embedding_dimension")
+            else self.model.get_sentence_embedding_dimension()
+        )
 
     def _sorgu_metni(self, sorgu: str) -> str:
         if self.sorgu_yonergesi:
