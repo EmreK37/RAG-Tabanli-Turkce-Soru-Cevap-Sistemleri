@@ -9,6 +9,7 @@ import numpy as np
 from src.metrics import (
     eslestirilmis_bootstrap_fark,
     hit_at_k,
+    kacinma_isabeti,
     kaynak_baglilik_skoru,
     mrr_at_k,
     ndcg_at_k,
@@ -17,6 +18,7 @@ from src.metrics import (
     soru_skorlari,
     token_f1,
 )
+
 
 
 def test_recall() -> None:
@@ -70,11 +72,15 @@ def test_bootstrap_belirgin_fark() -> None:
 
 
 def test_rag_metrikleri() -> None:
-    """Kaynak bağlılığı (faithfulness) ve içerik token F1 fonksiyonlarını doğrular."""
+    """Kaynak bağlılığı (faithfulness), içerik token F1 ve kaçınma isabeti fonksiyonlarını doğrular."""
     kaynak = ["Staj uygulama esasları Senato tarafından belirlenir."]
     yanit = "Staj esasları Senato tarafından belirlenir."
     assert kaynak_baglilik_skoru(yanit, kaynak) == 1.0
     assert abs(token_f1(yanit, "Staj uygulama esasları Senato tarafından belirlenir.") - (8.0 / 9.0)) < 1e-6
-    assert kaynak_baglilik_skoru("Bu bilgi verilen kaynaklarda yer almamaktadır.", kaynak) == 1.0
+    kacinma_yaniti = "Bu bilgi verilen kaynaklarda yer almamaktadır."
+    assert kaynak_baglilik_skoru(kacinma_yaniti, kaynak) == 1.0
+    assert kacinma_isabeti(kacinma_yaniti) == 1.0
+    assert kacinma_isabeti(yanit) == 0.0
+
 
 

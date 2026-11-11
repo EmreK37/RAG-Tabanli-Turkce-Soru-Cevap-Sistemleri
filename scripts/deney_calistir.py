@@ -124,9 +124,14 @@ def test_sistemini_degerlendir(
     ilgililer = [s["kanit_chunk_id"] for s in test_sorulari]
     ozet_satir: dict[str, Any] = {
         "sistem": ad,
+        "vektor_boyutu": getattr(sistem, "vektor_boyutu", 0),
+        "indeks_boyutu_kb": (
+            sistem.indeks_boyutu_kb() if hasattr(sistem, "indeks_boyutu_kb") else 0.0
+        ),
         "indeks_suresi_sn": round(indeks_suresi, 2),
         "ort_gecikme_ms": round(float(sum(gecikmeler) / len(gecikmeler)), 2),
     }
+
 
     soru_satirlari: list[dict[str, Any]] = []
     for metrik, k in METRIKLER:

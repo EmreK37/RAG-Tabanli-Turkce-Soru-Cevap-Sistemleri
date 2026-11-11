@@ -213,3 +213,18 @@ def token_f1(yanit: str, referans: str) -> float:
     duyarlilik = ortak / len(r_tok)
     return float(2 * kesinlik * duyarlilik / (kesinlik + duyarlilik))
 
+
+_KACINMA_KALIPLARI = (
+    "bu bilgi verilen kaynaklarda yer almamaktadır",
+    "verilen kaynaklarda yer almamaktadır",
+    "kaynaklarda bu bilgiye yer verilmemiştir",
+    "kaynak metinlerde bulunmamaktadır",
+)
+
+
+def kacinma_isabeti(yanit: str) -> float:
+    """Cevaplanamaz sorularda modelin yanıt vermekten kaçınma (abstention) başarısını ölçer."""
+    kucuk = yanit.lower()
+    return 1.0 if any(kalip in kucuk for kalip in _KACINMA_KALIPLARI) else 0.0
+
+

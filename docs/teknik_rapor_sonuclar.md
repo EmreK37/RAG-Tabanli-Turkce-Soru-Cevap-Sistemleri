@@ -16,14 +16,15 @@
 
 ## 2. RQ1 & RQ4: Erişim Kalitesi ve Hesaplama Verimliliği Karşılaştırması (120 Test Sorusu)
 
-| Sistem | Model (`hf`) | Recall@5 | Recall@10 | nDCG@10 | MRR@10 | İndeks Süresi (sn) | Ort. Gecikme (ms) |
-|---|---|---:|---:|---:|---:|---:|---:|
-| **`e5-base`** | `intfloat/multilingual-e5-base` | 0.9750 | **0.9917** | **0.9246** | **0.9031** | 17.53 | 11.81 |
-| **`bge-m3`** | `BAAI/bge-m3` | **0.9833** | **0.9917** | 0.9189 | 0.8943 | 60.86 | 20.46 |
-| **`bm25`** | `BM25Okapi` (Sözcüksel) | 0.9250 | 0.9417 | 0.8479 | 0.8165 | **0.01** | **0.41** |
-| **`tr-model`** | `trmteb/turkish-embedding-model` | 0.9333 | 0.9583 | 0.8336 | 0.7924 | 10.38 | 15.76 |
-| **`qwen3-0.6b`** | `Qwen/Qwen3-Embedding-0.6B` | 0.9083 | 0.9417 | 0.8165 | 0.7751 | 36.80 | 62.74 |
-| **`minilm`** | `paraphrase-multilingual-MiniLM-L12-v2` | 0.8500 | 0.9083 | 0.7477 | 0.6954 | 10.09 | 12.57 |
+| Sistem | Model (`hf`) | Vektör Boyutu | İndeks Boyutu (KB) | Recall@5 | Recall@10 | nDCG@10 | MRR@10 | İndeks Süresi (sn) | Ort. Gecikme (ms) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| **`e5-base`** | `intfloat/multilingual-e5-base` | 768 | 246.00 | 0.9750 | **0.9917** | **0.9246** | **0.9031** | 17.53 | 11.81 |
+| **`bge-m3`** | `BAAI/bge-m3` | 1024 | 328.00 | **0.9833** | **0.9917** | 0.9189 | 0.8943 | 60.86 | 20.46 |
+| **`bm25`** | `BM25Okapi` (Sözcüksel) | 1651 (Sözlük) | **101.67** | 0.9250 | 0.9417 | 0.8479 | 0.8165 | **0.01** | **0.41** |
+| **`tr-model`** | `trmteb/turkish-embedding-model` | 768 | 246.00 | 0.9333 | 0.9583 | 0.8336 | 0.7924 | 10.38 | 15.76 |
+| **`qwen3-0.6b`** | `Qwen/Qwen3-Embedding-0.6B` | 1024 | 328.00 | 0.9083 | 0.9417 | 0.8165 | 0.7751 | 36.80 | 62.74 |
+| **`minilm`** | `paraphrase-multilingual-MiniLM-L12-v2` | **384** | 123.00 | 0.8500 | 0.9083 | 0.7477 | 0.6954 | 10.09 | 12.57 |
+
 
 - **H1 Doğrulaması (`e5-base` vs `bm25`):** `nDCG@10` farkı **`+0.0767`**, %95 Eşleştirilmiş Bootstrap Güven Aralığı **`[0.0269, 0.1283]`** (`p < 0.05`, **anlamlı: True**).
 - **RQ4 (Pareto Analizi):** `e5-base`, `bge-m3` ile eşdeğer erişim başarısını **3.5x daha düşük indeksleme süresi** ve **~2x daha düşük sorgu gecikmesi** ile sağlayarak tekil modeller arasında en güçlü Pareto noktasını oluşturmuştur.
