@@ -1,0 +1,89 @@
+=== [TRB-01] Alan: scifact-tr ===
+Tip 2 diyabet hastalarında düzenli aerobik egzersiz programları, HbA1c düzeylerinde istatistiksel olarak anlamlı bir düşüş ve periferik insülin duyarlılığında artış sağlamaktadır.
+
+=== [TRB-02] Alan: scifact-tr ===
+Mevsimsel influenza aşıları, 65 yaş üstü bireylerde hastaneye yatış oranını %40 ila %60 arasında azaltarak ciddi solunum yolu komplikasyonlarını önlemektedir.
+
+=== [TRB-03] Alan: scifact-tr ===
+Antibiyotiklerin viral üst solunum yolu enfeksiyonlarında gereksiz kullanımı, klinik iyileşme süresini kısaltmadığı gibi bakteriyel antimikrobiyal direnç gelişimini hızlandırır.
+
+=== [TRB-04] Alan: scifact-tr ===
+Kronik uyku yoksunluğu, prefrontal korteks aktivitesini baskılayarak çalışma belleği kapasitesini ve dikkat sürdürme performansını belirgin biçimde bozar.
+
+=== [TRB-05] Alan: scifact-tr ===
+D vitamini takviyesi, başlangıçta serum 25-hidroksivitamin D düzeyi düşük olan bireylerde akut solunum yolu enfeksiyonu geçirme riskini azaltmaktadır.
+
+=== [TRB-06] Alan: scifact-tr ===
+Yüksek sodyumlu diyet tüketimi, damar sertliğini ve ekstraselüler sıvı hacmini artırarak birincil hipertansiyon ve inme riskini yükseltir.
+
+=== [TRB-07] Alan: scifact-tr ===
+CRISPR-Cas9 gen düzenleme teknolojisi, hedef DNA dizilerinde çift zincirli kırıklar oluşturarak nokta mutasyonlarının yüksek özgüllükle düzeltilmesine olanak tanır.
+
+=== [TRB-08] Alan: scifact-tr ===
+Mikroplastik parçacıklar, deniz ekosistemlerinde fitoplanktonlardan üst trofik düzeydeki balıklara kadar besin zinciri boyunca biyobirikime uğramaktadır.
+
+=== [TRB-09] Alan: fiqa-tr ===
+Merkez bankalarının politika faizini artırması, kredi maliyetlerini yükselterek toplam talebi soğutur ve orta vadede talep yönlü enflasyon baskısını sınırlar.
+
+=== [TRB-10] Alan: fiqa-tr ===
+Yatırım fonlarında portföy çeşitlendirmesi, farklı varlık sınıfları arasındaki düşük korelasyondan yararlanarak sistematik olmayan riski minimize eder.
+
+=== [TRB-11] Alan: fiqa-tr ===
+Şirketlerin serbest nakit akışı, işletme faaliyetlerinden elde edilen nakitten sermaye harcamaları (CapEx) düşüldükten sonra kalan ve ortaklara dağıtılabilecek tutarı gösterir.
+
+=== [TRB-12] Alan: fiqa-tr ===
+Enflasyona endeksli devlet tahvilleri, anapara ve kupon ödemelerini tüketici fiyat endeksindeki (TÜFE) değişime göre güncelleyerek reel getiriyi korur.
+
+=== [TRB-13] Alan: fiqa-tr ===
+Kurumsal yönetim ilkelerine uyum derecesi yüksek olan halka açık şirketler, şeffaf finansal raporlama sayesinde daha düşük özsermaye maliyetiyle fon bulabilmektedir.
+
+=== [TRB-14] Alan: fiqa-tr ===
+Fiyat/Kazanç (F/K) oranı, bir hisse senedinin piyasa değerinin hisse başına düşen yıllık net kâra bölünmesiyle bulunur ve yatırımcıların bir birim kâr için ödediği fiyatı ölçer.
+
+=== [TRB-15] Alan: fiqa-tr ===
+Vadeli işlem (futures) sözleşmeleri, üretici ve ithalatçıların döviz kuru veya emtia fiyatlarındaki ani dalgalanmalara karşı koruma (hedging) yapmasını sağlar.
+
+=== [TRB-16] Alan: fiqa-tr ===
+Likidite karşılama oranı, bankaların 30 günlük stres senaryosunda net nakit çıkışlarını karşılayacak düzeyde yüksek kaliteli likit varlık bulundurmasını zorunlu kılar.
+
+=== [TRB-17] Alan: hukuk-tr ===
+6698 sayılı Kişisel Verilerin Korunması Kanunu uyarınca, açık rıza belirli bir konuya ilişkin olmalı, bilgilendirmeye dayanmalı ve özgür iradeyle açıklanmalıdır.
+
+=== [TRB-18] Alan: hukuk-tr ===
+Mesafeli satış sözleşmelerinde tüketici, hiçbir gerekçe göstermeksizin ve cezai şart ödemeksizin malın tesliminden itibaren on dört gün içinde cayma hakkını kullanabilir.
+
+=== [TRB-19] Alan: hukuk-tr ===
+İş Kanunu'na göre belirsiz süreli iş sözleşmelerinin feshinden önce, işçinin kıdemine göre iki haftadan sekiz haftaya kadar değişen ihbar önellerine uyulması zorunludur.
+
+=== [TRB-20] Alan: hukuk-tr ===
+Fikir ve Sanat Eserleri Kanunu kapsamında bir yazılımın kaynak kodu ilim ve edebiyat eseri sayılır; eser sahibinin mali hakları yazılı sözleşme olmadan devredilemez.
+
+=== [TRB-21] Alan: hukuk-tr ===
+İdari yargıda iptal davası açma süresi, özel kanunlarda ayrı süre gösterilmeyen hallerde yazılı bildirimin yapıldığı günü izleyen günden itibaren altmış gündür.
+
+=== [TRB-22] Alan: hukuk-tr ===
+Anonim şirketlerde genel kurul, esas sözleşmeyi değiştirmeye, yönetim kurulu üyelerini seçmeye ve finansal tabloları onaylamaya münhasıran yetkilidir.
+
+=== [TRB-23] Alan: teknoloji-tr ===
+Transformer mimarisindeki öz-dikkat (self-attention) mekanizması, bir dizideki tüm token çiftleri arasındaki bağımlılıkları mesafeden bağımsız olarak paralel hesaplar.
+
+=== [TRB-24] Alan: teknoloji-tr ===
+Düşük dereceli uyarlama (LoRA), ön-eğitimli büyük dil modellerinin ağırlıklarını dondurup yalnızca küçük boyutlu ayrıştırılmış matrisleri eğiterek bellek ihtiyacını önemli ölçüde düşürür.
+
+=== [TRB-25] Alan: teknoloji-tr ===
+İlişkisel veritabanlarında B-ağacı (B-tree) indeksleri, sıralı anahtar aramalarını ve aralık sorgularını logaritmik zaman karmaşıklığında gerçekleştirir.
+
+=== [TRB-26] Alan: teknoloji-tr ===
+Konteyner orkestrasyon platformu Kubernetes, pod'ların CPU ve bellek kullanımını izleyerek yatay otomatik ölçeklendirme (HPA) ile kopya sayısını trafiğe göre ayarlar.
+
+=== [TRB-27] Alan: teknoloji-tr ===
+Sıfır bilgi kanıtı (Zero-Knowledge Proof), bir tarafın gizli verinin kendisini açıklamadan o veriye sahip olduğunu kriptografik olarak doğrulamasına imkan verir.
+
+=== [TRB-28] Alan: teknoloji-tr ===
+Niceleme (quantization) tekniği, sinir ağı ağırlıklarını 16-bit kayan noktadan 4-bit tam sayıya dönüştürerek model boyutunu yaklaşık dört kat küçültür.
+
+=== [TRB-29] Alan: egitim-tr ===
+Biçimlendirici değerlendirme, öğrenme süreci devam ederken öğrencilere düzenli geri bildirim sunarak kavram yanılgılarının erken aşamada giderilmesini amaçlar.
+
+=== [TRB-30] Alan: egitim-tr ===
+Aralıklı tekrar (spaced repetition) yöntemi, bilginin unutulma eğrisine uygun artan zaman aralıklarıyla gözden geçirilmesini sağlayarak uzun süreli belleğe aktarımı güçlendirir.

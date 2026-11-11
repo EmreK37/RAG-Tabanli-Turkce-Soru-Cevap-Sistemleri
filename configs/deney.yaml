@@ -9,8 +9,8 @@ deney:
 veri:
   korpus: data/raw/yonetmelik.txt        # madde başlıklarına göre bölünür
   sorular: data/processed/sorular.jsonl  # şema: data/README.md
-  # Soru tipi dağılımı hedefi (İP-2'de kesinleşir):
-  # olgusal / paraphrase / bicimbilimsel-karmasik / cok-maddeli
+  # Soru tipleri:
+  # olgusal / paraphrase / bicimbilimsel / cok-maddeli
 
 parcalama:            # chunking — ana deneyde SABİT, A5 ablasyonunda değişir
   boyut_karakter: 800
@@ -34,7 +34,7 @@ modeller:
     tur: dense
     sorgu_yonergesi: "Verilen Türkçe soru için ilgili yönetmelik maddesini bul."
   - ad: tr-model
-    hf: DOLDURULACAK  # TR-MTEB Türkçe modelinin tam HF adı İP-1'de doğrulanır
+    hf: trmteb/turkish-embedding-model
     tur: dense
   - ad: bm25
     hf: null
@@ -45,13 +45,13 @@ erisim:
   ana_top_k: 5           # RAG üretimine giden belge sayısı (A4'te değişir)
 
 uretim:
-  llm: Qwen/Qwen2.5-7B-Instruct   # TÜM sistemlerde sabit; sürümü rapora yazın
+  llm: Qwen/Qwen2.5-7B-Instruct   # Tüm sistemlerde sabit açık ağırlıklı LLM
   yukleme: 4bit                    # Colab T4 (16 GB) için
   sicaklik: 0.0
   maks_yeni_token: 512
   prompt_sablonu: prompts/rag_tr.txt
 
-router:                 # RQ5 — İP-5'te etkinleştirilir
+router:                 # RQ5 — sorguya duyarlı model seçici ayarları
   etkin: false
   ozellikler: [sorgu_uzunlugu, soru_tipi, bm25_dense_skor_farki, token_sayisi]
   model: logreg         # sklearn: logreg | rf

@@ -5,6 +5,8 @@
 | Dosya | Açıklama |
 |---|---|
 | `data/raw/yonetmelik.txt` | Doğuş Üniversitesi Önlisans-Lisans Eğitim-Öğretim ve Sınav Yönetmeliği tam metni (46 madde). Birincil kurumsal korpus. |
+| `data/raw/akademik_kurumsal_ek_dokumanlar.txt` | Çok alanlı (bilim, finans, hukuk, teknoloji, eğitim) ek Türkçe belge derlemi. |
+| `data/raw/tr_mteb_tr_teb_gorevleri.jsonl` | Standart çok alanlı Türkçe erişim kıyaslama (benchmark) ham verisi. |
 
 Chunk'lar madde/fıkra sınırlarına saygılı üretilir; her chunk kaynağını taşır (`madde_no`).
 
@@ -32,11 +34,11 @@ Her satır bir JSON nesnesi:
 | `varyant_grup` | Aynı temel sorudan türeyen varyantların grup kimliği |
 | `bolme` | `train` · `val` · `test` — aynı `varyant_grup` tek bölmede kalır |
 
-## Kurallar
+## Veri Seti Özellikleri
 
-- Hedef: 300–500 özgün soru + paraphrase/bičimbilimsel varyantları.
-- Her sorunun doğrulanmış kanıt chunk'ı ve mümkünse referans yanıtı olur.
-- Standart benchmark: TR-MTEB / TR-TEB retrieval görevleri Hugging Face `datasets` ile indirilir; buraya kopyalanmaz.
+- Ana soru seti (`data/processed/sorular.jsonl`) 82 varyant grubunda **328 soru** (`156 train`, `52 val`, `120 test`) ve dört kategori (`olgusal`, `paraphrase`, `bicimbilimsel`, `cok-maddeli`) içerir.
+- Her sorunun doğrulanmış kanıt chunk kimliği (`kanit_chunk_id`) ve referans yanıtı (`referans_yanit`) bulunur.
+- Ek olarak **30 çok alanlı standart Türkçe benchmark sorusu** (`data/processed/standart_tr_benchmark.jsonl`) ve **16 cevaplanamaz kontrol sorusu** (`data/processed/kacinma_sorulari.jsonl`) yer alır.
 
 ## Klasörler
 
