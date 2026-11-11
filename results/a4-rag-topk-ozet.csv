@@ -1,0 +1,4 @@
+sistem,top_k,hit@k,faithfulness,token_f1
+e5-base,1,0.5,0.6909,0.2916
+e5-base,3,0.6667,0.8679,0.2927
+e5-base,5,1.0,0.8921,0.4083
