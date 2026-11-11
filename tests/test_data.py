@@ -28,3 +28,11 @@ def test_uzun_madde_pencereleme():
     assert len(chunklar) > 1
     assert chunklar[0].chunk_id == "MADDE-5-1"
     assert all(c.madde_no == 5 for c in chunklar)
+
+
+def test_ayni_satirda_degisiklik_ibaresi():
+    metin = "MADDE 27 – (Değişik:RG-22/8/2022-31931)\nStaj esasları Senato tarafından belirlenir."
+    chunklar = yonetmelik_parcala(metin, boyut=800, ortusme=100)
+    assert len(chunklar) == 1
+    assert chunklar[0].chunk_id == "MADDE-27"
+    assert chunklar[0].madde_no == 27

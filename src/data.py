@@ -19,7 +19,7 @@ class Chunk:
     metin: str
 
 
-_MADDE_RE = re.compile(r"^MADDE\s+(\d+)\s*[-–]?\s*$", re.MULTILINE)
+_MADDE_RE = re.compile(r"^MADDE\s+(\d+)\s*[-–]?\s*", re.MULTILINE)
 _CUMLE_RE = re.compile(r"(?<=[.!?])\s+")
 
 
