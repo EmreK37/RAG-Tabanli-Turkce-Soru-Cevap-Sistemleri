@@ -77,10 +77,11 @@ def test_rag_metrikleri() -> None:
     yanit = "Staj esasları Senato tarafından belirlenir."
     assert kaynak_baglilik_skoru(yanit, kaynak) == 1.0
     assert abs(token_f1(yanit, "Staj uygulama esasları Senato tarafından belirlenir.") - (8.0 / 9.0)) < 1e-6
-    kacinma_yaniti = "Bu bilgi verilen kaynaklarda yer almamaktadır."
+    kacinma_yaniti = "Bu bilgi verilen kaynaklarda yer almıyor."
     assert kaynak_baglilik_skoru(kacinma_yaniti, kaynak) == 1.0
     assert kacinma_isabeti(kacinma_yaniti) == 1.0
     assert kacinma_isabeti(yanit) == 0.0
+
 
 
 

@@ -188,9 +188,25 @@ def icerik_tokenlari(metin: str) -> list[str]:
     ]
 
 
+_KACINMA_KALIPLARI = (
+    "bu bilgi verilen kaynaklarda yer almıyor",
+    "verilen kaynaklarda yer almıyor",
+    "bu bilgi verilen kaynaklarda yer almamaktadır",
+    "verilen kaynaklarda yer almamaktadır",
+    "kaynaklarda bu bilgiye yer verilmemiştir",
+    "kaynak metinlerde bulunmamaktadır",
+)
+
+
+def kacinma_isabeti(yanit: str) -> float:
+    """Cevaplanamaz sorularda modelin yanıt vermekten kaçınma (abstention) başarısını ölçer."""
+    kucuk = yanit.lower()
+    return 1.0 if any(kalip in kucuk for kalip in _KACINMA_KALIPLARI) else 0.0
+
+
 def kaynak_baglilik_skoru(yanit: str, kaynak_metinler: Sequence[str]) -> float:
     """Üretilen yanıttaki içerik sözcüklerinin kaynak bağlamda bulunma oranını hesaplar."""
-    if "bu bilgi verilen kaynaklarda yer almamaktadır" in yanit.lower():
+    if kacinma_isabeti(yanit) == 1.0:
         return 1.0
     yanit_tok = icerik_tokenlari(yanit)
     if not yanit_tok:
@@ -198,6 +214,7 @@ def kaynak_baglilik_skoru(yanit: str, kaynak_metinler: Sequence[str]) -> float:
     kaynak_kumesi = set(icerik_tokenlari(" ".join(kaynak_metinler)))
     eslesen = sum(1 for t in yanit_tok if t in kaynak_kumesi)
     return float(eslesen / len(yanit_tok))
+
 
 
 def token_f1(yanit: str, referans: str) -> float:
@@ -213,18 +230,5 @@ def token_f1(yanit: str, referans: str) -> float:
     duyarlilik = ortak / len(r_tok)
     return float(2 * kesinlik * duyarlilik / (kesinlik + duyarlilik))
 
-
-_KACINMA_KALIPLARI = (
-    "bu bilgi verilen kaynaklarda yer almamaktadır",
-    "verilen kaynaklarda yer almamaktadır",
-    "kaynaklarda bu bilgiye yer verilmemiştir",
-    "kaynak metinlerde bulunmamaktadır",
-)
-
-
-def kacinma_isabeti(yanit: str) -> float:
-    """Cevaplanamaz sorularda modelin yanıt vermekten kaçınma (abstention) başarısını ölçer."""
-    kucuk = yanit.lower()
-    return 1.0 if any(kalip in kucuk for kalip in _KACINMA_KALIPLARI) else 0.0
 
 

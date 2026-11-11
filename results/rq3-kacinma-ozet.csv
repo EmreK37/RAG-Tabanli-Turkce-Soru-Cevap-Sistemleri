@@ -1,0 +1,5 @@
+sistem,soru_sayisi,kacinma_dogrulugu,halusinasyon_orani
+e5-base,16,1.0,0.0
+bge-m3,16,1.0,0.0
+tr-model,16,1.0,0.0
+bm25,16,1.0,0.0
