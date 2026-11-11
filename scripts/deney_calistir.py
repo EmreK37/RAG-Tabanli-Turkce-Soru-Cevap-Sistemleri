@@ -84,6 +84,7 @@ def main() -> None:
     maks_k = max(cfg["erisim"]["top_k"])
     ozet_satirlar: list[dict] = []
     soru_satirlar: list[dict] = []
+    router_satirlar: list[dict] = []
     for ad, sistem in sistemler.items():
         sonuclar: list[list[str]] = []
         gecikmeler: list[float] = []
@@ -116,6 +117,33 @@ def main() -> None:
         ozet_satirlar.append(satir)
         print(satir)
 
+        # Router (RQ5) için tüm bölmelerde (train/val/test) top-1 skor ve ndcg@10 kaydı
+        tum_sonuclar: list[list[str]] = []
+        tum_top1_skor: list[float] = []
+        for soru in sorular:
+            bulunan = sistem.retrieve(soru["soru"], k=10)
+            tum_sonuclar.append([c for c, _ in bulunan])
+            tum_top1_skor.append(float(bulunan[0][1]) if bulunan else 0.0)
+        tum_ilgililer = [s["kanit_chunk_id"] for s in sorular]
+        tum_ndcg10 = soru_skorlari(tum_sonuclar, tum_ilgililer, "ndcg", 10)
+        tum_recall5 = soru_skorlari(tum_sonuclar, tum_ilgililer, "recall", 5)
+        for soru, top1_s, ndcg_s, rec5_s, bulunan_id in zip(
+            sorular, tum_top1_skor, tum_ndcg10, tum_recall5, tum_sonuclar
+        ):
+            router_satirlar.append(
+                {
+                    "sistem": ad,
+                    "soru_id": soru["soru_id"],
+                    "bolme": soru.get("bolme", "test"),
+                    "tip": soru.get("tip", ""),
+                    "varyant_grup": soru.get("varyant_grup", ""),
+                    "top1_skor": round(top1_s, 6),
+                    "ndcg@10": round(float(ndcg_s), 6),
+                    "recall@5": round(float(rec5_s), 6),
+                    "ilk_sonuc": bulunan_id[0] if bulunan_id else "",
+                }
+            )
+
     with open(cikti_dir / "ozet.csv", "w", newline="", encoding="utf-8") as f:
         yazar = csv.DictWriter(f, fieldnames=list(ozet_satirlar[0].keys()))
         yazar.writeheader()
@@ -124,6 +152,10 @@ def main() -> None:
         yazar = csv.DictWriter(f, fieldnames=list(soru_satirlar[0].keys()))
         yazar.writeheader()
         yazar.writerows(soru_satirlar)
+    with open(cikti_dir / "router-veri.csv", "w", newline="", encoding="utf-8") as f:
+        yazar = csv.DictWriter(f, fieldnames=list(router_satirlar[0].keys()))
+        yazar.writeheader()
+        yazar.writerows(router_satirlar)
     # üretim aşaması için chunk metinlerine erişim notu
     (cikti_dir / "NOT.txt").write_text(
         f"Chunk metinleri: chunklar.jsonl\nKorpus: {cfg['veri']['korpus']}\n",

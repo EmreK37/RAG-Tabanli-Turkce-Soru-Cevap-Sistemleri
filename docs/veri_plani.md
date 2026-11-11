@@ -26,3 +26,4 @@
   - `train` (~%50): Router (`ModelSecici`) eğitimi için kullanılır.
   - `val` (~%15): Router hiperparametre ve özellik seçimi için kullanılır.
   - `test` (~%35): Tüm retrieval (`02_retrieval_deneyleri.ipynb`), RAG üretim (`03_rag_uretim.ipynb`) ve nihai router (`04_model_secici.ipynb`) karşılaştırmalarında kullanılır.
+

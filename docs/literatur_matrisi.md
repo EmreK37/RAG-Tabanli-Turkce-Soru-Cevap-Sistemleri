@@ -25,3 +25,4 @@ Bu belge, Türkçe RAG (Retrieval-Augmented Generation) sistemlerinde embedding 
 - **RQ3 (H3):** Daha yüksek retrieval skoru (`Recall@5`, `nDCG@10`), LLM yanıt doğruluğunu ve sadakatini (`faithfulness`) her zaman doğrusal olarak artırmaz; belirli bir eşikten sonra doygunluk görülür.
 - **RQ4:** Embedding boyutu, indeksleme süresi ve sorgu gecikmesi (`ms`) ile erişim kalitesi arasındaki Pareto sınırı analiz edilir.
 - **RQ5 (H4 - Özgün Katkı):** Sorgu uzunluğu, soru tipi ve BM25–Dense skor farkı gibi hafif özelliklerle eğitilen `ModelSecici` (router), tek bir modele kıyasla daha iyi kalite–maliyet dengesi sağlar.
+
