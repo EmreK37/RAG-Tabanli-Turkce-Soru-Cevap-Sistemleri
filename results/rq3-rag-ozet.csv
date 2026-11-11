@@ -1,0 +1,5 @@
+sistem,hit@5,faithfulness,answer_correctness,dogru_atif
+e5-base,0.95,0.8964,0.6712,0.75
+tr-model,0.7,0.8832,0.6662,0.45
+bm25,0.65,0.8843,0.663,0.6
+minilm,0.65,0.8597,0.6382,0.6
