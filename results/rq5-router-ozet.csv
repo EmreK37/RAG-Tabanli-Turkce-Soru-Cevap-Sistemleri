@@ -1,0 +1,9 @@
+sistem,ndcg@10,recall@5,ort_gecikme_ms
+Router (RF - Tam),0.9018,0.9667,2.26
+Router (LogReg),0.8879,0.9667,1.35
+A2: Soru Tipi Çıkarıldı,0.8985,0.975,2.24
+A3: Biçimbilimsel Özellik Çıkarıldı,0.9042,0.9633,2.39
+A6: Ön-Çıkarım Maliyeti Dâhil,0.9018,0.9667,19.58
+Tek Model: bm25,0.8479,0.925,0.57
+Tek Model: e5-base,0.9246,0.975,12.33
+Tek Model: bge-m3,0.9189,0.9833,26.07
