@@ -1,0 +1,7 @@
+benchmark,sistem,vektor_boyutu,indeks_boyutu_kb,indeks_suresi_sn,ort_gecikme_ms,recall@5,recall@10,ndcg@10,mrr@10
+TR-Standart-CokAlanli-30,minilm,384,45.0,0.02,11.35,1.0,1.0,0.9564,0.9417
+TR-Standart-CokAlanli-30,e5-base,768,90.0,0.03,11.47,1.0,1.0,1.0,1.0
+TR-Standart-CokAlanli-30,bge-m3,1024,120.0,0.09,21.1,1.0,1.0,1.0,1.0
+TR-Standart-CokAlanli-30,qwen3-0.6b,1024,120.0,0.05,45.25,1.0,1.0,1.0,1.0
+TR-Standart-CokAlanli-30,tr-model,768,90.0,0.03,11.58,1.0,1.0,1.0,1.0
+TR-Standart-CokAlanli-30,bm25,523,17.52,0.0,0.2,0.9667,1.0,0.9517,0.9367
