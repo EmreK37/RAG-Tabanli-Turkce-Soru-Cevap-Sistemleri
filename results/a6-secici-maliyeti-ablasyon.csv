@@ -1,0 +1,4 @@
+ablasyon,sistem,on_cikarim_maliyeti_dahil,ndcg@10,recall@5,ort_gecikme_ms,hizlanma_katsayisi_vs_e5
+A6,Router (RF - Yalnızca Sorgu/BM25 Özellikleri),False,0.9018,0.9667,2.26,5.46
+A6,A6: Ön-Çıkarım Maliyeti Dâhil (Dense Skor Farkı),True,0.9018,0.9667,19.58,0.63
+A6,Tek Model: e5-base,False,0.9246,0.975,12.33,1.0

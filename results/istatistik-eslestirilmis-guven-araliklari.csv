@@ -1,0 +1,9 @@
+hipotez,karsilastirma,metrik,orneklem_sayisi,bootstrap_tekrar,ortalama_fark,ga_alt_95,ga_ust_95,anlamli_p005
+H1,e5-base vs bm25,nDCG@10,120,1000,0.0767,0.0269,0.1283,True
+H1,bge-m3 vs bm25,nDCG@10,120,1000,0.071,0.0214,0.1225,True
+H1,e5-base vs minilm,nDCG@10,120,1000,0.1769,0.1185,0.2364,True
+H1,e5-base vs tr-model,nDCG@10,120,1000,0.091,0.0412,0.1418,True
+H2,bge-m3 vs bm25 (paraphrase alt kümesi),nDCG@10,30,1000,0.2811,0.154,0.4082,True
+H3,Hit@5=1 vs Hit@5=0 (RAG Yanıt Kalitesi),Answer Correctness,140,1000,0.1481,0.089,0.2075,True
+H4,Router (RF) vs bm25,nDCG@10,120,1000,0.0539,0.0221,0.0889,True
+H4,Router (RF) vs e5-base,nDCG@10,120,1000,-0.0228,-0.0628,0.0148,False

@@ -22,7 +22,7 @@ Bu repo, Türkçe RAG (Retrieval-Augmented Generation) sistemlerinde farklı emb
 | intfloat/multilingual-e5-base | Çok dilli dense retrieval |
 | BAAI/bge-m3 | Güçlü çok dilli erişim (dense + sparse + multi-vector) |
 | Qwen/Qwen3-Embedding-0.6B | Yeni nesil embedding referansı |
-| TR-MTEB Türkçe modeli | Türkçe odaklı karşılaştırma (tam HF adı kurulumda doğrulanır) |
+| TR-MTEB Türkçe modeli (`trmteb/turkish-embedding-model`) | Türkçe odaklı karşılaştırma |
 | BM25 | Sözcüksel (embedding'siz) baz çizgisi |
 
 Her model için ayrı FAISS indeksi kurulur; farklı modellerin vektörleri aynı indekste karıştırılmaz. Tüm sistemlerde aynı LLM, prompt, chunk yöntemi, Top-k ve üretim ayarları kullanılır.
@@ -30,7 +30,8 @@ Her model için ayrı FAISS indeksi kurulur; farklı modellerin vektörleri ayn�
 ## Hızlı başlangıç (Google Colab — önerilen)
 
 1. Aşağıdaki notebook'u Colab'da açın: **notebooks/00_kurulum_ve_kontrol.ipynb**
-   - Colab bağlantısı: https://colab.research.google.com/github/EmreK37/RAG-Tabanl-T-rk-e-Soru-Cevap-Sistemleri/blob/main/notebooks/00_kurulum_ve_kontrol.ipynb
+   - Colab bağlantısı (`RAG-dev`): https://colab.research.google.com/github/EmreK37/RAG-Tabanli-Turkce-Soru-Cevap-Sistemleri/blob/RAG-dev/notebooks/00_kurulum_ve_kontrol.ipynb
+   - Colab bağlantısı (`main`): https://colab.research.google.com/github/EmreK37/RAG-Tabanli-Turkce-Soru-Cevap-Sistemleri/blob/main/notebooks/00_kurulum_ve_kontrol.ipynb
 2. Çalışma zamanı türünü GPU (T4) seçin: Çalışma zamanı → Çalışma zamanı türünü değiştir → T4 GPU.
 3. Hücreleri sırayla çalıştırın. Notebook Drive'ı bağlar, repoyu klonlar, bağımlılıkları kurar ve ortamı doğrular.
 4. Deneyler sırayla `01`–`05` numaralı notebook'larla yürür; sonuçlar Drive'a ve `results/` klasörüne yazılır.
@@ -62,11 +63,11 @@ Tüm ayarlar (modeller, chunk boyutu, Top-k, tohumlar, LLM) tek dosyada tutulur:
 | `configs/` | Deney konfigürasyonları (tek doğruluk kaynağı) |
 | `data/` | Veri şeması ve ham/işlenmiş veriler (büyük dosyalar Git'e girmez) |
 | `results/` | Deney çıktıları (CSV/JSON) ve özet tablolar |
-| `docs/` | Literatür matrisi, veri planı, toplantı notları |
+| `docs/` | Literatür matrisi, veri planı ve deneysel sonuç raporu |
 
 ## Veri
 
-Birincil kurumsal korpus: Doğuş Üniversitesi Önlisans-Lisans Eğitim-Öğretim ve Sınav Yönetmeliği (`data/raw/yonetmelik.txt`, 46 madde). Hedef: 300–500 özgün soru, her soru için kanıt chunk kimliği, referans yanıt ve paraphrase varyantları. Aynı sorunun varyantları farklı veri bölmelerine dağıtılmaz. Standart karşılaştırma için TR-MTEB ve TR-TEB retrieval görevleri kullanılır. Veri şeması: [data/README.md](data/README.md).
+Birincil kurumsal korpus: Doğuş Üniversitesi Önlisans-Lisans Eğitim-Öğretim ve Sınav Yönetmeliği (`data/raw/yonetmelik.txt`, 46 madde, 82 chunk). Değerlendirme seti toplam **374 sorudan** oluşur: 82 varyant grubunda **328 kurumsal soru** (`156 train`, `52 val`, `120 test`), çok alanlı **30 standart Türkçe benchmark sorusu** (`data/processed/standart_tr_benchmark.jsonl`) ve **16 cevaplanamaz kontrol sorusu** (`data/processed/kacinma_sorulari.jsonl`). Aynı sorunun varyantları tek bölmede tutulur. Veri şeması: [data/README.md](data/README.md).
 
 ## Ekip ve iş paketleri (8 hafta)
 
@@ -91,4 +92,4 @@ Görev dağılımı: Araştırmacı 1 veri setleri · Araştırmacı 2 embedding
 
 ## Lisans
 
-Araştırma amaçlı kullanım içindir. Model ve veri seti lisansları ilgili kartlardan doğrulanmalıdır.
+Araştırma amaçlı kullanım içindir. Kullanılan açık ağırlıklı modellerin ve veri setlerinin lisansları ilgili Hugging Face model kartlarına tabidir.

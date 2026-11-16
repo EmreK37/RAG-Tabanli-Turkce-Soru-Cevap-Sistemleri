@@ -1,0 +1,3 @@
+ablasyon,sistem,cikarilan_ozellik,ndcg@10,recall@5,ort_gecikme_ms,recall5_farki
+A3,Router (RF - Tam Özellikler),yok,0.9018,0.9667,2.26,0.0
+A3,A3: Biçimbilimsel Özellik Çıkarıldı,ortalama_token_uzunlugu,0.9042,0.9633,2.39,-0.0034

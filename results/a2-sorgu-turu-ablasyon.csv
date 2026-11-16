@@ -1,0 +1,3 @@
+ablasyon,sistem,cikarilan_ozellik,ndcg@10,recall@5,ort_gecikme_ms,ndcg_farki
+A2,Router (RF - Tam Özellikler),yok,0.9018,0.9667,2.26,0.0
+A2,A2: Soru Tipi Çıkarıldı,soru_tipi,0.8985,0.975,2.24,-0.0033
